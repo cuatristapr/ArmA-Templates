@@ -1,9 +1,12 @@
 Your mod folder should be structured in a way that is easy to use and functions properly
 
-e.g. - @XYZ_your_mod_pbo\abc_mod_name\files go here
+@XYZ_your_mod.pbo\files go here
+@mod_name\data\textures
+@mod_name\data\scripts
+@mod_name\config.cpp
 
-config.cpp, cfgPatches.hpp, cfgMods.hpp, cfgVehicles.hpp, cfgWeapons.hpp, cfgUnitInsignia.hpp all go in the abc_mod_name folder.
-Within the abc_mod_name folder you should organize your assets (models, images, scripts) within separate folders.
+config.cpp, cfgPatches.hpp, cfgMods.hpp, cfgVehicles.hpp, cfgWeapons.hpp, cfgUnitInsignia.hpp all go in the @mod_name folder.
+Organization is key so keeping similar items grouped in different folders is a good idea (models, images, scripts).
 
 File types should include the full path name from the root folder indicated with a \ followed by the full path and ending with the file type.
-eg. hiddenSelectionsTextures[] = "\abc_mod_name\image_folder\icon.paa";
+hiddenSelectionsTextures[] = "\mod_name\image_folder\icon.paa";

@@ -1,37 +1,30 @@
 Simply copy and paste the code that you need to use for the item you are trying to create.
 
 ====================================================================================================
-// (UNIFORMS)
-UNIFORM (SL) {
-	(put in cfgVehicles)
-	class your_class_name_F: I_soldier_F {
-		author = "your name here";
-		displayName  = "name that shows up in Virtual Arsenal";
-		dlc = "name of dlc class";
-		hiddenSelections[] = {"camo","insignia"};
-		hiddenSelectionsTextures[] = {"path to image file in .paa format"};
-		model = "\A3\Characters_F_Beta\INDEP\ia_soldier_01.p3d"; // non-rolled sleeved version
-		model = ""; // rolled sleeved version
-		scope = 2;
-		scopeArsenal = 2;
-		uniformClass = "name of class in cfgWeapons with same item";
+
+UNIFORMS
+
+Blufor Uniform
+class your_class_name_F: B_Soldier_F { // put in cfgVehicles
+	author = "your_name_here";
+	_generalMacro = "B_Soldier_F";
+	scope = 2;
+	displayName  = "name_that_shows_up_in_Virtual_Arsenal";
+	model = "\A3\characters_f_beta\INDEP\ia_soldier_01.p3d"; // straight sleeved version
+	model = ""; // rolled sleeved version
+	uniformClass = "name of class in cfgWeapons";
+	hiddenSelections[] = {"camo","insignia"};
+	hiddenSelectionsTextures[] = {"path_to_image_file_in_.paa_format"};
+};
+class your_class_name: Uniform_Base { // put in cfgWeapons
+	scope = 2;
+	displayName = "name_that_shows_up_in_Virtual_Arsenal";
+	picture = "path_to_icon_for_item_in_.paa_format";
+	model = "\A3\characters_f_beta\INDEP\ia_soldier_01.p3d"; // straight sleeved version
+	model = ""; // rolled sleeved version
+	class ItemInfo: UniformItem {
+		uniformClass = "name of class in cfgVehicles with same item name";
+		containerClass = "supply60";
+		mass = 50;
 	};
-	(put in cfgWeapons)
-	class your_class_name: Uniform_Base {
-		author = "your name here";
-		displayName = "Name that shows up in Virtual Arsenal";
-		dlc = "name of dlc class";
-		model = ""; // rolled sleeved version
-		model = "\A3\Characters_F\Common\Suitpacks\suitpack_universal_F.p3d"; // non-rolled sleeved version
-		picture = "path to icon for item in .paa format";
-		scope = 2;
-		scopeArsenal = 2;
-		class ItemInfo: UniformItem {
-			containerClass = "supply40";
-			mass = 40;
-			type = 801
-			uniformClass = "name of class in cfgVehicles with same item name";
-			uniformModel = "-";
-		};
-	};
-}
+};

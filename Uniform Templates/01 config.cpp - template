@@ -1,18 +1,34 @@
 //====================================================================================================
 // config.cpp template
 
+#include "BIS_AddonInfo.hpp"
+#define _ARMA_
+
 class cfgPatches {
-    #include "cfgPatches.hpp"
+  class mod_name {
+    units[] = {"mod_name"};
+    weapons[] = {};
+    requiredVeslion = 0.1;
+    requiredAddons[] = {"A3_Characters_F"};
+  };
 };
+
 class cfgMods {
-	#include "cfgMods.hpp"
+    class mod_base;
+    class mod_name: mod_base {
+      name = "Mod Name"; // shown in the Virtual Arsenal
+    	logo = "";
+    };
 };
+
 class cfgVehicles {
 	#include "cfgVehicles.hpp"
 };
+
 class cfgWeapons {
 	#include "cfgWeapons.hpp"
 };
+
 class cfgUnitInsignia {
 	#include "cfgUnitInsignia.hpp"
 }:
